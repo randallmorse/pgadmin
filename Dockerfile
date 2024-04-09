@@ -26,4 +26,9 @@ COPY <<EOF /pgadmin4/servers.json
 
 EOF
 
+RUN chown pgadmin:root /etc/secrets/servers.json && \
+  chown pgadmin:root /etc/secrets/pgpassfile && \
+  chmod g=u /etc/secrets/servers.json && \
+  chmod g=u /etc/secrets/pgpassfile
+
 USER pgadmin
