@@ -1,5 +1,7 @@
 #!/bin/sh
 
+chown pgadmin:root /var/lib/pgadmin
+
 # pgadmin will setup initial servers based on the default email of the user
 # the path has the @ symbol replaced with an underscore
 storage_path=/var/lib/pgadmin/storage/$(echo $PGADMIN_DEFAULT_EMAIL | sed 's/@/_/g')
